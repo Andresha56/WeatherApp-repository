@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=K2D:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap');
+*{
+    padding: 0px;
+    margin: 0px;
+}
+#BgImg{
+    width: 100%;
+    position: relative;
+};
+#BgImg figure{
+    height: 100%;
+    width: 100%;
+
+}
+#BgImg figure img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    object-position: top;
+}
+#BgImg #content{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.2);
+}
+#BgImg #content #wrapper{
+    max-width: 90%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+}
+#BgImg #content #wrapper h1{
+    font-family: 'K2D', sans-serif;
+    color: #fff;
+    font-size: 40px;
+}
+#BgImg #content #wrapper div #inputField{
+    border: 0;
+    outline:0;
+    padding: 12px 40px;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
