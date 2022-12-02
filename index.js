@@ -1,65 +1,37 @@
 
-// -----------calll---back-------
-// const students = [
-//     {
-//         name: 'harry',
-//         subject: 'Python',
-//     },
-//     {
-//         name: 'Rohan',
-//         subject: 'Javavscript',
-//     }
-// ];
+const images = [
+    {
+        image: './images/haze.jpg'
+    }, {
+        image: './images/cloudy.jpg'
+    }, {
+        image: './images/rain.jpg'
+    }, {
+        image: 'images/winter(1).jpg'
+    }
+]
 
-// function callFunc(student,callbackStudent){
-//     setTimeout(()=>{
-//         students.push(student);
-//         callbackStudent()
-//     },3000);
-// };
-// let newStudent = { name: 'Jashika', subject: 'Machine learning' }
-// // callFunc(newStudent,getStudents);
-
-// function getStudents(){
-//     students.forEach(stu=> {
-//         console.log(stu);
-//     });
-// }
-
-
-// // --------promisee------
-
-// function func1(){
-//     return new Promise(function(resolve,reject){
-//         setTimeout(()=>{
-//             const error=true;
-//             if(!error){
-//                 console.log("function:you promise has been resiolved");
-//                 resolve('congrates')
-//             }else{
-//                 reject("sorry i'm fail to resolve your problem");
-//             };
-//             2000;
-//         });
-//     });
-// };
-// func1().then(function(){
-//     console.log('done')
-// })
-// .catch(function(){
-//     console.log("sorry")
-// })
-
-// api key
-// f37b9c9a29e81e8b424018812868b197
+const inputVal = document.getElementById('inputField');
+const form = document.querySelector('form');
+let cityName = document.querySelector('h1');
 
 
 
-// fetch
 
-// fetch("https://jsonplaceholder.typicode.com/users")
-//     .then((response )=> console.log(response.json()))
-//     .then((jSon) => console.log(jSon))
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    let search = inputVal.value;
+    cityName.innerText = search;
+    let ApiKey = 'c8e6dbac22a80fb604d5393ddc0ba513'
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${ApiKey}&units=metric`
+    const response = await fetch(url);
+    const responseData = await response.json();
+    let weatherType=responseData.weather[0].main;
+    let temp = document.querySelector('h2').innerText = `${responseData.main.temp}°C`;
+    let img = document.querySelector('img').src = `https://openweathermap.org/img/wn/${responseData.weather
+    [0].icon}@2x.png`;
+   
 
 
-// https://api.openweathermap.org/data/2.5/weather?q=Bengaluru&appid=c8e6dbac22a80fb604d5393ddc0ba513&units=metric
+
+})

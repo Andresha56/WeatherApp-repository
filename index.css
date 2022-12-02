@@ -3,47 +3,42 @@
     padding: 0px;
     margin: 0px;
 }
-#BgImg{
-    width: 100%;
-    position: relative;
-};
-#BgImg figure{
-    height: 100%;
-    width: 100%;
-
+body{
+background-image:linear-gradient(rgba(0,0, 0, 0.4), rgba(0, 0, 0, 0.5)),url(./images/clearSkyBg.jpg);
+background-repeat: no-repeat;
+background-size:cover;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
 }
-#BgImg figure img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    display: block;
-    object-position: top;
-}
-#BgImg #content{
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0,0,0,0.2);
-}
-#BgImg #content #wrapper{
+body #wrapper{
     max-width: 90%;
-    height: 100%;
-    margin: auto;
-    display: flex;
-    align-items:center;
-    justify-content: center;
-    flex-direction: column;
+    text-align: center;
 }
-#BgImg #content #wrapper h1{
-    font-family: 'K2D', sans-serif;
+body #wrapper h1{
     color: #fff;
     font-size: 40px;
+    font-family: 'K2D', sans-serif;
+    text-transform: capitalize;
 }
-#BgImg #content #wrapper div #inputField{
+
+body #wrapper input{
     border: 0;
-    outline:0;
-    padding: 12px 40px;
-    border-radius: 5px;
+    outline: 0;
+    padding: 10px 40px;
     font-family: 'Poppins', sans-serif;
+    border-radius: 5px;
+}
+#row{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+
+}
+#row h2,h3{
+    color: #fff;
+    font-size: 30px;
+    font-family: 'K2D', sans-serif;
+    margin:0 5px;
 }
